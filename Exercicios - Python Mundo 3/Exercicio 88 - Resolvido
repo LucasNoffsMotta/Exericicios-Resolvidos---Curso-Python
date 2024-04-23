@@ -1,6 +1,8 @@
 from random import randint
 from time import sleep
 
+
+
 print('-'*50)
 print(f'{'SORTEADOR MEGA SENA':^20}')
 print('-'*50)

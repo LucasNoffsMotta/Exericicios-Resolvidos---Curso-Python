@@ -1,0 +1,97 @@
+from random import randint
+from time import sleep
+
+acertos = []
+contador = 1
+print(f'JOGUE NA MEGA SENA!')
+print(f'Digite seu palpite! Vamos ver quantos numeros consegue acertar!')
+
+
+palpites = []
+while len(palpites) < 6:
+    num = int(input(f'Numero {contador}: '))
+    if num not in palpites and num > 0 and num < 61:
+        palpites.append(num)
+        contador += 1
+    elif num > 60 or num < 0:
+        print('Digite um valor entre 0 e 60.')
+    else:
+        print('Digite outro numero.')
+
+palpites.sort()
+
+
+print('-'*50)
+print(f'{'SORTEADOR MEGA SENA':^20}')
+print('-'*50)
+x = int(input('Quantos sorteios deseja fazer? '))
+sleep(1)
+
+lista = list()
+
+for c in range (0,x):
+    numeros = list()
+
+    while True:
+        num = (randint(0,60))
+        if num not in numeros:
+            numeros.append(num)
+
+        if len(numeros) == 6:
+            break
+
+    numeros.sort()
+    lista.append(numeros[:])
+    numeros.clear()
+
+
+sleep(1.5)
+print(f'Seus palpites foram: {palpites}')
+print()
+sleep(2)
+print('Agora vamos aos numeros sorteados!!!')
+print()
+sleep(2)
+print('Boa sorte!!!')
+sleep(0.5)
+print('Sorteando...')
+for c in range(0,x):
+    print('$',end = '')
+    sleep(x)
+print()
+sleep(2)
+
+
+for cont in range(0, len(lista)):
+    print('-'*40)
+    print(f'Sorteio {cont + 1}: {lista[cont]}',end = '')
+    sleep(1.5)
+    print()
+
+    for n in palpites:
+        if n in lista[cont]:
+            acertos.append(n)
+
+    if len(acertos) == 0:
+        sleep(1.5)
+        print(f'Voce nao acertou nenhum numero no sorteio {cont + 1}.')
+
+
+    elif len(acertos) == 6:
+        sleep(2)
+        print('Parabens, voce ganhou na mega sena!!!!')
+
+    elif len(acertos) == 1:
+        acertos.sort()
+        sleep(1.5)
+        print(f'Voce acertou um numero no sorteio {cont + 1}: o numero foi {acertos}.')
+
+
+    elif len(acertos) > 1:
+        acertos.sort()
+        sleep(1.5)
+        print(f'Voce acertou {len(acertos)} numeros no sorteio {cont + 1}: os numeros foram {acertos}.')
+
+    acertos.clear()
+    print()
+
