@@ -1,0 +1,26 @@
+#Mega Sena
+from time import sleep
+from random import randint
+print('---'*30)
+print(f'{'JOGA NA MEGA SENA':>49}')
+print('---'*30)
+
+jogos = int(input('Quantos jogos deseja sortear?\n: '))
+numeros = []
+for c in range (0,jogos):
+    numero = [randint(1,60),randint(1,60),randint(1,60),randint(1,60),randint(1,60),randint(1,60)]
+    for n in numero:
+        while numero.count(n) > 1:
+            numero = [randint(1, 60), randint(1, 60), randint(1, 60), randint(1, 60), randint(1, 60), randint(1, 60)]
+    numero.sort()
+    numeros.append(numero)
+
+
+numero.sort()
+print('-_-'*40)
+print(f'SORTEANDO {jogos} JOGOS')
+print('-_-'*40)
+for cont, num in enumerate(numeros):
+    sleep(1)
+    print(f'Sorteio {cont+1}:    {numeros[cont]}', end=' ')
+    print()
