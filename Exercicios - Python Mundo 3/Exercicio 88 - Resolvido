@@ -1,28 +1,38 @@
 from random import randint
 from time import sleep
+
 print('-'*50)
 print(f'{'SORTEADOR MEGA SENA':^20}')
 print('-'*50)
 x = int(input('Quantos sorteios deseja fazer? '))
 print('Sorteando...')
 sleep(1)
+
+lista = list()
 for c in range (0,x):
-    lista = list()
+    numeros = list()
     cont = 0
 
     while True:
         num = (randint(0,60))
-        if num not in lista:
-            lista.append(num)
+        if num not in numeros:
+            numeros.append(num)
         cont += 1
 
         if cont == 6:
             break
 
-    lista.sort()
-    print(lista)
-    lista.clear()
+    numeros.sort()
+    lista.append(numeros[:])
+    numeros.clear()
+
+
+for cont, numero in enumerate(lista):
+    print(f'Sorteio {cont + 1}: {lista[cont]}')
     sleep(1)
+    
+
+
 
 
 
