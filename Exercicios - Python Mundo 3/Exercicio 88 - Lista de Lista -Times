@@ -1,0 +1,44 @@
+#Criando as listas com os times:
+
+fichas_times = list()
+
+#time = [[nome do time,[jogadores],[posicao]]]
+
+time1 = ['Corinthans',['Dentinho','Fagner','Danilo'],'Atacante']
+time2 = ['Flamengo',['Hugo','Gabigol','Arrascaeta'],'Goleiro']
+time3 = ['Fluminense',['Marcelo','PH Ganso','John Kennedy'],'Meias']
+time4 = ['Botafogo',['Vinicius','Andrade','Pedro'],'Zagueiros']
+time5 = ['Vasco',['Edmundo','Diego Souza','Jhonathan'],'Atacantes']
+time6 = ['Palmeiras',['Endrik','Raphael Veiga','Scarpa'],'Atacantes']
+fichas_times.append((time1))
+fichas_times.append((time2))
+fichas_times.append((time2))
+fichas_times.append((time3))
+fichas_times.append((time4))
+
+
+#Menu de visualizacao
+
+while True:
+    print(f'{"Indice":<10}{"Time":>15}')
+    for i, times in enumerate(fichas_times):
+        print(f'{i:<10}- {times[0]:>15}')
+
+
+    ver = int(input('Deseja ver os jogadores de qual time? [999 para parar]: '))
+    valido = (len(fichas_times) - 1)
+    if ver > valido:
+        print('Digite um valor valido.')
+
+    else:
+        print(f'{"Time":<10}{"Jogador":>20}')
+        print('-'*30)
+        print(f'{fichas_times[ver][0]:<10}',end = '')
+        print()
+
+        for indice,jogador in enumerate(fichas_times[ver][1]):
+            print(f'{fichas_times[ver][2]:<10} {fichas_times[ver][1][indice]:>10}')
+    print()
+
+
+
