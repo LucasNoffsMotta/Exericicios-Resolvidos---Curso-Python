@@ -1,0 +1,31 @@
+ficha = list()
+
+while True:
+    nome = str(input('Nome: '))
+    nota1 = float(input('Nota 1: '))
+    nota2 = float(input('Nota 2: '))
+    media = (nota1 + nota2) / 2
+    ficha.append([nome,[nota1,nota2],media])
+    continuar = str(input('Deseja continuar? '))
+    if continuar in 'Nn':
+        print('Encerrando.')
+        break
+
+print('-'*30)
+print(f'{"No":<5}{"NOME":<10}{"MEDIA":>8}')
+
+for i,aluno in enumerate(ficha):
+    print(f'{i:<4}{aluno[0]:<10}{aluno[2]:>8.1f}')
+
+
+while True:
+    mostrar = int(input('Deseja ver as notas de qual aluno? (999 para parar): '))
+
+    if mostrar == 999:
+        print('Encerrando...')
+        break
+    elif mostrar <= len(ficha):
+        print(f'As notas do aluno {ficha[mostrar][0]} sao {ficha[mostrar][1]}.')
+
+    else:
+        print('Digite um valor valido.')
