@@ -47,6 +47,10 @@ def mostrar_times(times):
             for p,jogador in enumerate(times[ver][1]):
                     print(f'{jogador[p]:<10}')
             print()
+        
+        elif ver == 999:
+            print('Encerrando...')
+            break
 
 
 #times = [['Corinthans',['Cassio','Goleiro','Chicao','Zagueiro','Danilo','Atacante']],['Flamengo',['Gabigol','Atacante','Bruno Henrique','Atacante']]]
