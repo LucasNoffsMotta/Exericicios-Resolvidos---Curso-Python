@@ -4,14 +4,13 @@ def cadastro_times():
     times = list()
     jogadores = list()
 
+
     while True:
         nome_time = str(input('Nome do time: '))
 
-        for j in range(0,2):
-            posicao = str(input(f'Posicao do jogador {j+1}: '))
-            jogador = str(input(f'Nome do {posicao}: '))
+        for j in range(0,11):
+            jogador = str(input(f'Jogador {j+1}: '))
             jogadores.append(jogador)
-            jogadores.append(posicao)
         times.append([nome_time,[jogadores[:]]])
 
         print('Todos os jogadores foram cadastrados.')
@@ -28,32 +27,32 @@ def cadastro_times():
 
 
 def mostrar_times(times):
-    print(times)
 
 
     while True:
         print('Lista de times cadastrados: ')
+        print('*'*50)
 
         for indice, time in enumerate(times):
             print(f'{indice:<5} {time[0]:>20}')
         print('-'*50)
 
         ver = int(input('Deseja ver os jogadores de qual time? [Digite 999 para sair]: '))
+        print('-'*50)
 
         if ver <= (len(times) - 1):
-
             print(f'Jogadores do {times[ver][0]}:')
-
-            for p,jogador in enumerate(times[ver][1]):
-                    print(f'{jogador[p]:<10}')
             print()
-        
+
+            for i, jogador in enumerate(times[ver][1]):
+                for j in jogador:
+                    print(f'{j:<10}')
+            print()
+
         elif ver == 999:
             print('Encerrando...')
             break
 
-
-#times = [['Corinthans',['Cassio','Goleiro','Chicao','Zagueiro','Danilo','Atacante']],['Flamengo',['Gabigol','Atacante','Bruno Henrique','Atacante']]]
 
 times = cadastro_times()
 mostrar_times(times)
