@@ -1,0 +1,14 @@
+#Criando o dicionario
+
+aluno = dict()
+
+aluno['Nome'] = input('Nome: ')
+aluno['Media'] = int(input('Media: '))
+
+if aluno['Media'] >= 7:
+    aluno['Status'] = 'Aprovado'
+else:
+    aluno['Status'] = 'Reprovado'
+
+for key,value in aluno.items():
+    print(f'{key}: {value}')
