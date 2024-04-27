@@ -1,0 +1,28 @@
+#Cadastro de jogador
+
+jogador = dict()
+gols = list()
+
+jogador['nome'] = input('Nome do jogador: ')
+jogador['partidas'] = int(input(f'Quantas partidas {jogador['nome']} jogou? '))
+
+for c in range(0,jogador['partidas']):
+    gol = int(input(f'Quantos gols na partida {c}? '))
+    gols.append(gol)
+
+jogador['gols'] = gols
+jogador['total'] = sum(gols)
+
+print('-_-'*30)
+
+for key,value in jogador.items():
+    print(f'{key} tem valor {value}.')
+
+print('-_-' * 30)
+
+print(f'O jogador {jogador['nome']} jogou {jogador['partidas']} partidas.')
+
+for num, gol in enumerate(jogador['gols']):
+    print(f'{"==>":>15} {"Na partida":>15} {num}, fez {gol} gols.')
+    
+print(f'Fez um total de {jogador['total']} gols.')
