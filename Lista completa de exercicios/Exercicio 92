@@ -1,0 +1,15 @@
+pessoa = dict()
+
+pessoa['Nome'] = input('Nome: ')
+ano = int(input('Digite o ano de seu nascimento: '))
+pessoa['Idade'] = 2024 - ano
+pessoa['CTPS'] = int(input('Numero da carteira de trabalho [0 nao tem]: '))
+
+if pessoa['CTPS'] != 0:
+    pessoa['contrato'] = int(input('Digite o ano de sua contratacao: '))
+    pessoa['salario'] = int(input('Digite o seu salario: '))
+    tempo_aposenta = 35 - (2024 - pessoa['contrato'])
+    pessoa['aposentadoria'] = pessoa['Idade'] + tempo_aposenta
+
+for key,value in pessoa.items():
+    print(f'{key} tem o valor {value}')
