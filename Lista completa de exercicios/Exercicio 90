@@ -11,4 +11,4 @@ else:
     aluno['Status'] = 'Reprovado'
 
 for key,value in aluno.items():
-    print(f'{key}: {value}')
+    print(f'{key} igual a {value}')
