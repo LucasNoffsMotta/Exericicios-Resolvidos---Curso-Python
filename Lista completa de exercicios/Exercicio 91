@@ -1,0 +1,61 @@
+from random import randint
+from time import sleep
+
+#Criando o dicionario que sera utilizado no programa:
+
+jogadores = dict()
+
+jogadores['Jogador1'] = randint(0,6)
+jogadores['Jogador2'] = randint(0,6)
+jogadores['Jogador3'] = randint(0,6)
+jogadores['Jogador4'] = randint(0,6)
+
+
+#Printando os vencedores na ordem correta
+
+
+for key, value in jogadores.items():
+    print(f'O {key} tirou {value}.')
+    sleep(1)
+
+
+#Organizando os valores em uma lista:
+
+valores = list()
+
+for key, value in jogadores.items():
+
+    if key == 'Jogador1':
+        valores.append(value)
+
+    elif value >= valores[0]:
+        valores.insert(0,value)
+
+    elif value <= min(valores):
+        valores.append(value)
+
+    elif value >= min(valores) and value >= valores[1]:
+        valores.insert(1,value)
+
+    elif value >= min(valores) and value >= valores[2]:
+        valores.insert(2,value)
+
+
+
+#Mostrando em ordem os vencedores:
+
+print('-'*20)
+print('Placar')
+print('-'*20)
+
+for cont,numero in enumerate(valores):
+    for key,value in jogadores.items():
+        if numero == value:
+            print(f'{cont + 1}o lugar: {key} com {value}')
+    sleep(1)
+
+
+
+
+
+
