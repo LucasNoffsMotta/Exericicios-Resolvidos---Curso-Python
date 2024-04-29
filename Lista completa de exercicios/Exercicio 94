@@ -1,0 +1,47 @@
+#Declarando as variaveis:
+
+todos = list()
+mulheres = list()
+acima_media = list()
+idade_total = idade_mulheres = 0
+
+#Loop de repeticao para cadastro:
+while True:
+    pessoa = dict()
+    pessoa['Nome'] = input('Nome: ')
+    pessoa['Sexo'] = input('Sexo: [M] / [F]: ').strip().upper()
+    pessoa['Idade'] = int(input('Idade: '))
+    todos.append(pessoa)
+
+    continuar = input('Deseja continuar cadastrando? [S] / [N]: ')
+
+    if continuar in 'Nn':
+        print('Encerrando...')
+        break
+
+#Mostrando quantas pessoas foram cadastradas:
+print(f'Foram cadastradas {len(todos)} pessoas.')
+
+#Tirando a media de idade do grupo, incluindo as mulheres cadastradas na lista de mulheres:
+for p in todos:
+    for key,value in p.items():
+        if key == 'Idade':
+            idade_total += value
+        if value == 'F':
+            mulheres.append(p['Nome'])
+
+#Calculando a media de idade:
+media = idade_total / len(todos)
+
+for p in todos:
+    for key, value in p.items():
+        if key == 'Idade' and value > media:
+            acima_media.append(p['Nome'])
+
+#Mostrando todos os outputs:
+print(f'Media de idades: {media:.2f}')
+print(f'Lista de mulheres cadastradas: {mulheres}')
+print(f'Pessoas com idade acima da media: {acima_media}')
+
+
+
