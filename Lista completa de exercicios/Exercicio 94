@@ -19,9 +19,6 @@ while True:
         print('Encerrando...')
         break
 
-#Mostrando quantas pessoas foram cadastradas:
-print(f'Foram cadastradas {len(todos)} pessoas.')
-
 #Tirando a media de idade do grupo, incluindo as mulheres cadastradas na lista de mulheres:
 for p in todos:
     for key,value in p.items():
@@ -36,12 +33,33 @@ media = idade_total / len(todos)
 for p in todos:
     for key, value in p.items():
         if key == 'Idade' and value > media:
-            acima_media.append(p['Nome'])
+            acima_media.append(p)
 
 #Mostrando todos os outputs:
+print('-_-'*50)
+print(f'O grupo tem {len(todos)} pessoas.')
 print(f'Media de idades: {media:.2f}')
-print(f'Lista de mulheres cadastradas: {mulheres}')
-print(f'Pessoas com idade acima da media: {acima_media}')
+
+#Loop para mostrar a lista de mulheres cadastradas:
+print(f'As mulheres cadastradas foram: ',end = '')
+for mulher in mulheres:
+    print(f'{mulher}',end = ',')
+print()
+
+#Loop para mostrar pessoas com idade acima da media:
+print(f'Pessoas com idade acima da media: ')
+print()
+
+for dicio in acima_media:
+    for key,value in dicio.items():
+        print(f'{key} = {value}',end = '  ,  ')
+    print()
+
+
+
+
+
+
 
 
 
