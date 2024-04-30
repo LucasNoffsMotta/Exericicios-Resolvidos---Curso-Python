@@ -1,0 +1,63 @@
+#Cadastro de jogador
+todos = list()
+
+#Cadastrando os elementos nos dicionarios:
+while True:
+    total_gols = 0
+    jogador = dict()
+    gols = list()
+    print('-'*100)
+    jogador['nome'] = input('Nome do jogador: ')
+    jogador['partidas'] = int(input(f'Quantas partidas {jogador['nome']} jogou? '))
+
+    for c in range(0,jogador['partidas']):
+        gol = int(input(f'Quantos gols na partida {c}? '))
+        gols.append(gol)
+        total_gols += gol
+    jogador['Gols'] = gols
+    jogador['Total'] = total_gols
+    todos.append(jogador)
+    continuar = input('Deseja continuar? [S] / [N]: ').strip().upper()
+
+    if continuar in 'Nn':
+        print('Encerrando...')
+        break
+print(todos)
+print('=-'*100)
+print(f'{"Cod"} {"Nome":>10}{"Gols":>10}{"Total":>40}')
+print('-'*100)
+
+#Mostrando os elementos dos dicionarios de forma organizada:
+for count,dicio in enumerate(todos):
+    print(f'{count:<10}',end = '')
+    print(f'{dicio['nome']}',end = '     ')
+    print(f'{dicio['Gols']}',end = '')
+    print(f'{dicio['Total']:>40}',end = '')
+    print()
+    print('-'*100)
+    
+
+#Interagindo com o usuario para mostrar com mais detalhes cada item do dicionario:
+while True:
+    ver = int(input('Deseja ver os dados de qual jogador? [999 para parar] '))
+
+    if ver <= (len(todos) - 1) and ver != 999:
+        for count, dict in enumerate(todos):
+            if count == ver:
+                print(f'--LEVANTAMENTO do jogador {dict['nome']}')
+                for jogo,gol in enumerate(dict['Gols']):
+                    print(f'No jogo {jogo} fez {gol} gols.')
+                print('-'*100)
+    
+    elif ver == 999:
+        print('Encerrando...')
+        break
+
+    else:
+        print(f'ERRO: Nao existe jogador {ver}.')
+
+
+
+
+
+
