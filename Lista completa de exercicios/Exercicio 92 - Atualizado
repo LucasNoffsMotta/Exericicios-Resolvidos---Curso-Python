@@ -1,0 +1,28 @@
+from datetime import datetime
+
+dados =dict()
+
+while True:
+    dados['Nome']= str(input('Digite aqui seu nome: '))
+    dados['Idade'] = (datetime.now().year - int(input('Ano de nascimento: ')))
+    dados['cpts'] = int(input('Numero da carteira de trabalho (0 = nao tem): '))
+
+    if dados['cpts'] != 0:
+        dados['ano'] = int(input('Ano da contratacao: '))
+        dados['salario'] = int(input('Salario: '))
+        dados['aposentadoria'] = (35 - (datetime.now().year - dados['ano']) + dados['Idade'])
+        break
+
+    else:
+        break
+
+print('-_-'*100)
+for dado, info in dados.items():
+    print(f'   - {dado} tem valor {info}')
+
+
+
+
+
+
+
