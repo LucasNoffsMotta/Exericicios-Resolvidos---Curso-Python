@@ -1,0 +1,22 @@
+from random import randint
+from operator import itemgetter
+from time import sleep
+
+
+
+jogadores = {'Jogador 1': randint(1,6),
+             'Jogador 2': randint(1,6),
+             'Jogador 3': randint(1,6),
+             'Jogador 4': randint(1,6)}
+
+for jogador,valor in jogadores.items():
+    print(f'{jogador} tirou {valor}')
+    sleep(1)
+
+ranking = sorted(jogadores.items(), key = itemgetter(1),reverse=True)
+
+print('-'*100)
+
+for c, jogador in enumerate(ranking):
+    print(f'{c+1}o Lugar: {jogador[0]} com {jogador[1]} pontos.')
+    sleep(1)
