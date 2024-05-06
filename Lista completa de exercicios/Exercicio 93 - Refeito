@@ -1,0 +1,21 @@
+#Cadastro de Jogador
+
+jogador = dict()
+partidas = list()
+
+jogador['nome'] = str(input('Nome do jogador: '))
+tot = int(input('Quantas partidas jogou: '))
+for c in range(0,tot):
+    partidas.append(int(input(f'Quantos gols fez na {c+1} partida: ')))
+jogador['gols'] = partidas
+jogador['total'] = sum(partidas)
+
+for key, value in jogador.items():
+    print(f'{key} tem valor {value}')
+
+for partida, gol in enumerate(jogador['gols']):
+    print(f'    => Na partida {partida+1} o jogador {jogador['nome']} fez {gol} gols.')
+print(f'Foi um total de {jogador['total']} gols.')
+
+
+
