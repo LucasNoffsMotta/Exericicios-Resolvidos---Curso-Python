@@ -1,0 +1,68 @@
+#Declaracao das estruturas de dados:
+jogadores = list()
+jogador = dict()
+gols = list()
+
+#Loop de input dos dados:
+while True:
+    jogador.clear()
+    gols.clear()
+    total = 0
+    jogador['Nome'] = str(input('Nome: '))
+    partidas = int(input(f'Quantas partidas {jogador['Nome']} jogou? : '))
+    for p in range (0,partidas):
+        gol = int(input(f'    Quantos gols fez na partida {p + 1}? '))
+        gols.append(gol)
+        total += gol
+    jogador['Gols'] = gols[:]
+    jogador['Total'] = total
+    jogadores.append(jogador.copy())
+
+
+    #Loop de validacao da resposta:
+    while True:
+        continuar = input('Deseja continuar? [S/N]: ').upper()[0]
+
+        if continuar in 'SN':
+            break
+        print('Erro. Digite S ou N')
+
+    if continuar in 'N':
+        break
+
+#Mostrando tabela
+print('-_-'*100)
+print('Estatisticas por jogador')
+print('-_-'*100)
+print(f'{"Cod"}',end = ' ')
+
+#Cabecalho
+for i in jogador.keys():
+    print(f'{i:<15}',end = '')
+print()
+
+#Conteudo da tabela:
+for num, jogador in enumerate(jogadores):
+    print(f'{num:<3}',end = ' ')
+    for values in jogador.values():
+        print(f'{str(values):<15}',end = '')
+    print()
+
+#Pedindo entrada do usuario para mostrar uma linha especifica da tabela:
+while True:
+    jog = int(input('Deseja ver o levantamento de qual jogador? [999 para parar]: '))
+
+    if jog == 999:
+        break
+
+    if jog >= len(jogadores):
+        print('Erro. Digite um numero valido.')
+
+    else:
+        print('-'*100)
+        print(f'Levantamento do jogador {jogadores[jog]['Nome']}: ')
+        for numero,gol in enumerate(jogadores[jog]['Gols']):
+            print(f'====> No jogo {numero} fez {gol} gols.')
+        print('-'*100)
+print('>>>>>>Volte sempre!<<<<<<<')
+
