@@ -1,0 +1,55 @@
+#A) Quantas pessoas foram cadastradas
+#B) A média de idade
+#C) Uma lista com as mulheres
+#D) Uma lista de pessoas com idade acima da média
+
+
+pessoa = dict()
+galera = list()
+soma = 0
+mulheres = list()
+
+
+while True:
+    pessoa.clear()
+    pessoa['Nome'] = str(input('Nome: '))
+
+    while True:
+        pessoa['Sexo'] = input('Sexo [F/M]: ').upper()[0]
+        if pessoa['Sexo'] not in 'MF':
+            print('Erro. Digite F ou M.')
+        else:
+            break
+
+    pessoa['Idade'] = int(input('Idade: '))
+    soma += pessoa['Idade']
+
+    galera.append(pessoa.copy())
+
+    while True:
+        continuar = input('Deseja continuar? [S/N]: ').upper()[0]
+
+        if continuar in 'SN':
+            break
+
+    if continuar in 'N':
+        break
+
+media = soma / len(galera)
+
+print(f'A) Ao todo temos {len(galera)} pessoas cadastradas.')
+print(f'B) Media de idades = {media:.2f}')
+print('C) Mulheres cadastradas: ',end = '')
+for p in galera:
+    if p['Sexo'] in 'F':
+        print(f'{p['Nome']}',end = ',')
+print()
+
+
+print('D) Pessoas com idade acima da media: ')
+print('      ')
+for p in galera:
+    if p['Idade'] > media:
+        for key,value in p.items():
+            print(f'{key} = {value}',end = ';')
+    print()
