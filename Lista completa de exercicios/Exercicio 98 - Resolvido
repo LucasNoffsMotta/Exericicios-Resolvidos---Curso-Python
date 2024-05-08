@@ -1,0 +1,64 @@
+from time import sleep
+
+
+
+def contador(a,b,c):
+    if c < 0:
+        c = 0 + (-c)
+
+        print('-' * 40)
+        print(f'Contagem de {a} a {b} de {c} em {c}: ')
+        print('-' * 40)
+
+        for num in range(a, b+1, -c):
+            print(num, end=' ')
+            sleep(0.5)
+        print('FIM')
+
+    elif a > b:
+        print('-' * 40)
+        print(f'Contagem de {a} a {b} de {c} em {c}: ')
+        print('-' * 40)
+
+        for num in range(a, b+1, -c):
+            print(num, end=' ')
+            sleep(0.5)
+        print('FIM')
+
+    elif c == 0:
+        c = 1
+        print('-' * 40)
+        print(f'Contagem de {a} a {b} de {c} em {c}: ')
+        print('-' * 40)
+
+        for num in range(a, b+1, c):
+            print(num, end=' ')
+            sleep(0.5)
+        print('FIM')
+
+    else:
+        print('-' * 40)
+        print(f'Contagem de {a} a {b} de {c} em {c}: ')
+        print('-' * 40)
+
+        for num in range(a, b+1, c):
+            print(num, end=' ')
+            sleep(0.5)
+        print('FIM')
+
+
+
+
+
+contador(0,10,1)
+contador(10,0,-2)
+
+
+print('-'*40)
+print('Agora vamos personalizar! ')
+inicio = int(input('Inicio: '))
+fim = int(input('Fim: '))
+intervalo = int(input('Intervalo: '))
+sleep(1)
+contador(inicio,fim,intervalo)
+
