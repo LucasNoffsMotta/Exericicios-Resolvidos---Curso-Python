@@ -1,0 +1,23 @@
+from time import sleep
+
+def maior(*num):
+    lista = list()
+    lista.append(num)
+    print('-_-'*100)
+    print('Analisando os valores passados...')
+    sleep(0.5)
+    print('Os numeros informados foram: ')
+    sleep(0.5)
+    for n in num:
+        print(n,end = ' ')
+        sleep(0.5)
+    print()
+    sleep(0.5)
+    print(f'Foram informados {len(num)} ao todo.')
+    sleep(0.5)
+    print(f'Maior numero = {max(num)}')
+    print('-_-' *100)
+
+
+maior(0,9,8,5,4,3,3)
+maior(3,9)
