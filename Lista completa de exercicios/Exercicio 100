@@ -1,0 +1,37 @@
+from random import randint
+from random import choice
+from time import sleep
+
+lista = list()
+for num in range(0,20):
+    lista.append(randint(0,10))
+
+def sorteia(lista):
+    sorteados = list()
+    for c in range(0,5):
+        sorteados.append(choice(lista))
+    return sorteados
+
+def somaPar(sorteados):
+    somaPar = 0
+
+    for num in sorteados:
+        if num % 2 == 0:
+            somaPar += num
+
+    return somaPar
+
+
+sorteados = sorteia(lista)
+pares = somaPar(sorteados)
+
+print('Sorteando 5 valores da lista: ',end = ' ')
+for num in sorteados:
+    print(num,end = ' ')
+    sleep(1)
+print()
+sleep(1)
+print(f'A soma dos valores pares = {pares}')
+
+
+
