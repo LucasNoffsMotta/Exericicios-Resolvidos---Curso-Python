@@ -1,0 +1,29 @@
+from time import sleep
+
+def maior(*num):
+    cont = maior = menor = 0
+    print('Analisando os valores passados...')
+    sleep(0.5)
+    print('Valores informados: ')
+    for numero in num:
+        print(f'{numero}',end = ' ')
+        if cont == 0:
+            maior = menor = numero
+
+        else:
+            if numero > maior:
+                maior = numero
+            elif numero < menor:
+                menor = numero
+        cont += 1
+        sleep(0.5)
+
+    print('Fim!')
+    sleep(0.5)
+    print(f'Total de valores informados: {cont}')
+    print(f'Maior valor: {maior}')
+    print(f'Menor valor: {menor}')
+
+
+maior(0,2,3,4,2,1)
+maior(1003,90,32,3,2,3,1101,32,9)
