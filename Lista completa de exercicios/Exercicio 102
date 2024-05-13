@@ -1,0 +1,20 @@
+
+def fatorial(num,show = 0):
+    f = 1
+    if show:
+        for c in range(num,0,-1):
+            if c !=1:
+                f *= c
+                print(f'{c}',end = ' x ')
+            if c == 1:
+                print(f'{c}',end = '')
+        print(f' = {f}')
+
+    else:
+        for c in range(num,0,-1):
+            f*=c
+        print(f'{f}')
+
+
+print('-'*20)
+fatorial(3,show=True)
