@@ -1,0 +1,20 @@
+def ficha(nome,gol):
+
+    n = '<desconhecido>'
+    g = 0
+
+    if nome and gol:
+        print(f'Jogador {nome} fez {gol} gol(s).')
+    elif nome:
+        print(f'Jogador {nome} fez {g} gol(s).')
+    elif gol:
+        print(f'Jogador {n} fez {gol} gol(s).')
+    else:
+        print(f'Jogador {n} fez {g} gols.')
+
+
+
+nome = input('Nome: ')
+gol = input('Gols: ')
+ficha(nome,gol)
+
