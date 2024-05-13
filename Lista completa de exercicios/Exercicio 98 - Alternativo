@@ -1,0 +1,37 @@
+from time import sleep
+
+def contagem(i,f,int):
+    if int == 0:
+        int = 1
+    if int < 0:
+        int *= -1
+    print('-_-'*20)
+    print(f'Contgem de {i} a {f} de {int} em {int}: ')
+    sleep(0.5)
+    cont = i
+    if i < f:
+        while cont <= f:
+            print(f'{cont}', end=' ')
+            cont += int
+            sleep(0.5)
+        print('Fim!')
+
+    else:
+        while cont >= f:
+            print(f'{cont}',end = ' ')
+            cont -= int
+            sleep(0.5)
+        print('Fim!')
+
+
+
+contagem(1,10,1)
+sleep(1)
+contagem(10,0,2)
+print('Agora vamos personalizar!')
+print('-_-'*20)
+inicio = int(input('Inicio: '))
+fim = int(input('Fim: '))
+inter = int(input('Intervalo: '))
+sleep(0.5)
+contagem(inicio,fim,inter)
