@@ -4,3 +4,13 @@ def mensagem(msg):
     print('-'*len(msg))
 
 mensagem('Mensagem teste')
+
+
+#Alternativo:
+def mensagem(msg):
+    tam = len(msg) + 4
+    print('-'*tam)
+    print(f'  {msg}')
+    print('-'*tam)
+
+mensagem('Teste Funcional')
