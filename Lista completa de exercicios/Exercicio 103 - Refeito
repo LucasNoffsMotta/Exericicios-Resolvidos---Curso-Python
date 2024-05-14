@@ -1,0 +1,21 @@
+def fatorial(num,show=False):
+    f =1
+
+    for c in range(num,0,-1):
+        if show:
+            print(f'{c}',end = '')
+            if c > 1:
+                print(' x ',end= '')
+            else:
+                print(' = ',end= '')
+        f*=c
+    print(f)
+
+numero = int(input('Numero do fatorial: '))
+ver = input('Ver ou nao ver o calculo: [1] - Sim / [2] - Nao:  ')
+if ver == '1':
+    fatorial(numero, show=True)
+else:
+    fatorial(numero)
+
+
