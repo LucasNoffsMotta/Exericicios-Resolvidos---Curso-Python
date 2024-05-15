@@ -1,0 +1,23 @@
+
+def aluno(*notas,situ=False):
+
+    dici = dict()
+    dici['total'] = len(notas)
+    dici['maior'] = max(notas)
+    dici['menor'] = min(notas)
+    dici['soma'] = sum(notas)
+    dici['media'] = sum(notas) / len(notas)
+
+
+    if situ:
+        if dici['media'] > 7:
+            dici['situ'] = 'Aprovado'
+
+        if dici['media'] < 7:
+            dici['situ'] = 'Reprovado'
+
+    return dici
+
+
+
+print(aluno(3,4,5,4,situ=True))
