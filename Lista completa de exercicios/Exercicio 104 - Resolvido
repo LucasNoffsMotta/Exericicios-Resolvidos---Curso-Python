@@ -1,0 +1,22 @@
+from Colors import cores
+cor = cores()
+def leiaInt(txt):
+    num = 0
+    ok = False
+
+    while True:
+        val = input(txt)
+
+        if val.isnumeric():
+            num = int(val)
+            ok = True
+
+        if ok:
+            return num
+        else:
+            print(f'{cor["vermelho"]}Erro! Digite um numero valido.{cor["limpa"]}')
+
+
+n = leiaInt('Digite aqui um numero inteiro: ')
+print(f'{cor["verde"]}Voce digitou o numero {n}')
+
