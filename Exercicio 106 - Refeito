@@ -1,0 +1,37 @@
+from Colors import cores
+cor = cores()
+
+def mostrar(comando):
+    print(f'{cor["fundo_preto"]}{cor["verde"]}')
+    print(help(comando))
+    print(f'{cor["limpa"]}')
+
+
+def msg(text):
+    tam = len(text) + 4
+    print(f'{cor["fundo_vermelho"]}{cor["preto"]}')
+    print(f'-_-'*tam)
+    print(text)
+    print(f'-_-'*tam)
+    print(f'{cor["limpa"]}')
+
+
+
+comando = ' '
+
+
+while True:
+    print(f'{cor["fundo_verde"]}{cor["roxo"]}')
+    msg('Sistema de ajuda PyHelp By Lucas')
+    print(f'{cor["fundo_preto"]}{cor["branco"]}')
+    comando = str(input('Comando ou funcionalidade >  '))
+    print(f'{cor["limpa"]}')
+    if comando == 'FIM':
+        print('Encerrando...')
+
+    else:
+        print(f'{cor["fundo_preto"]}{cor["roxo"]}')
+        print(f'Buscando a bibloteca \'{comando}\'')
+        print(f'{cor["limpa"]}')
+        mostrar(comando)
+
