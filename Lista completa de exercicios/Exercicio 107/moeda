@@ -1,0 +1,26 @@
+def metade(num):
+    return num/2
+
+
+
+def dobro(num):
+    return num*2
+
+
+def aumento(num,percent):
+    return num + (num*(percent/100))
+
+
+
+
+def resumo(num,x,y):
+    print('-'*50)
+    print(f'{"RESUMO DO VALOR":^25}')
+    print('-'*50)
+    print(f'{"Preco analisado: R$"} {num:>19}')
+    print(f'Dobro do preco: R$ {dobro(num):>20}')
+    print(f'Metade do preco: R$ {metade(num):>19}')
+    print(f'{x}% de aumento: R$ {aumento(num,x):>20} ')
+    print(f'{y}% de aumento: R$ {aumento(num,y):>20}')
+    print('-' * 50)
+

@@ -1,0 +1,5 @@
+import moeda
+
+n = int(input('Digite um numero: '))
+moeda.resumo(n,30,80)
+

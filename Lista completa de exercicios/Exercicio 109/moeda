@@ -1,0 +1,29 @@
+def metade(num,formata = False):
+    if formata:
+        num = num/2
+        return moeda(num)
+    else:
+        return num/2
+
+
+
+def dobro(num,formata = False):
+    if formata:
+        num *= 2
+        return moeda(num)
+    else:
+        return num*2
+
+
+def aumento(num,percent,formata=False):
+    if formata:
+        num += (num * (percent/100))
+        return moeda(num)
+    else:
+        return num + (num*(percent/100))
+
+
+
+def moeda(num=0,moeda='R$'):
+    return f'{moeda}{num:.2f}'.replace('.',',')
+

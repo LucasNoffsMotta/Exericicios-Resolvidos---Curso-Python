@@ -1,0 +1,29 @@
+def metade(num):
+    return num/2
+
+
+
+def dobro(num):
+    return num*2
+
+
+def aumento(num,percent):
+    return num + (num*(percent/100))
+
+
+
+def moeda(preco=0,moeda='US$'):
+    return f'{moeda}R${preco:.2f}'.replace('.',',')
+
+
+def resumo(num,x,y):
+    print('-'*50)
+    print(f'{"RESUMO DO VALOR":^25}')
+    print('-'*50)
+    print(f'{"Preco analisado:"} {moeda(num):>19}')
+    print(f'Dobro do preco: {moeda(dobro(num)):>20}')
+    print(f'Metade do preco: {moeda(metade(num)):>19}')
+    print(f'{x}% de aumento: {moeda(aumento(num,x)):>20} ')
+    print(f'{y}% de aumento: {moeda(aumento(num,y)):>20}')
+    print('-' * 50)
+

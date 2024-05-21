@@ -1,0 +1,9 @@
+import moeda
+
+n = float(input('Digite um numero: '))
+print(f'{"Preco analisado:"} {moeda.moeda(n):>19}')
+print(f'Dobro do preco: {moeda.dobro(n,True)}')
+print(f'Metade do preco: {moeda.metade(n,True):>19}')
+print(f'13% de aumento: {moeda.aumento(n,13,True):>20}')
+print(f'10% de aumento: {moeda.aumento(n,10,True):>20}')
+
