@@ -1,0 +1,71 @@
+from Colors import cores
+cor = cores()
+
+def leiaInt(txt):
+
+
+
+    while True:
+
+        try:
+            numero = str(input(txt)).strip()
+            n = int(numero)
+        except KeyboardInterrupt:
+            print()
+            print('O usuario preferiu no digitar o valor.')
+            numero = 0
+            return numero
+
+
+        except ValueError:
+            print(f'{cor["vermelho"]}Digite um numero inteiro valido.{cor["limpa"]}')
+
+        else:
+            return n
+
+def leiaFloat(txt):
+
+    while True:
+        numero = str(input(txt)).strip().replace(',','.')
+
+        if '.' in numero:
+            try:
+                float(numero)
+
+            except KeyboardInterrupt:
+                numero = 0
+                print('O usuario decidiu nao digitar este numero.')
+                return numero
+
+            except ValueError:
+                print(f'{cor["vermelho"]}Digite um numero Real valido.{cor["limpa"]}')
+
+            else:
+                n = float(numero)
+                return n
+        else:
+            try:
+                int(numero)
+            except ValueError:
+                print(f'{cor["vermelho"]}Digite um valor numerico Real.{cor["limpa"]}')
+
+            except KeyboardInterrupt:
+                print(f'{cor["vermelho"]}O usuario desistiu de digitar o numero.{cor["limpa"]}')
+                numero = 0
+                return numero
+            else:
+                print(f'{cor["vermelho"]}O valor digitado eh um numero inteiro, digite um numero real.{cor["limpa"]}')
+
+
+
+
+n = leiaInt('Digite um numero inteiro: ')
+print(f'O numero inteiro digitado foi {n}.')
+
+n2 = leiaFloat('Digite um numero real: ')
+print(f'O numero Real digitado foi {n2}')
+
+
+
+
+
