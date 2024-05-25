@@ -1,5 +1,4 @@
-import menu
+from menu import opcoes
+main = opcoes
 
-
-
-menu.opcoes()
+main()
